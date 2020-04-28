@@ -108,9 +108,11 @@ const app = createApp({
         <li><router-link to="/bar#anchor2">/bar#anchor2</router-link></li>
         <li><router-link :to="hashWithNumber">/bar#1number</router-link></li>
       </ul>
+
       <label>
       <input type="checkbox" v-model="smoothScroll"> Use smooth scroll
       </label>
+
       <router-view class="view" v-slot="{ Component, props }">
         <transition
           name="fade"
@@ -118,7 +120,7 @@ const app = createApp({
           @before-enter="flushWaiter"
           @before-leave="setupWaiter"
         >
-          <component :is="Component" v-bind="props"></component>
+          <component :is="Component"></component>
         </transition>
       </router-view>
     </div>
