@@ -53,6 +53,10 @@ export interface ScrollPositionElement {
 
 export type ScrollPosition = ScrollPositionCoordinates | ScrollPositionElement
 
+export interface ScrollPositionNew extends ScrollToOptions {
+  el?: Element | string
+}
+
 type Awaitable<T> = T | PromiseLike<T>
 
 export interface ScrollBehaviorHandler<T> {
